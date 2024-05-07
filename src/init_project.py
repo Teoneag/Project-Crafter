@@ -20,6 +20,10 @@ def init_project(project_type, project_name):
     os.makedirs(project_name)
     os.chdir(project_name)
     
+    # 2. Create gifs folder
+    if not os.path.exists("gifs"):
+        os.makedirs("gifs")
+    
     # 3. Coppy readme, license
     current_dir = os.getcwd()
     resources_dir = os.path.join(os.path.dirname(__file__), "..", "resources")

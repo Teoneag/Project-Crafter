@@ -4,12 +4,11 @@
 </pre>
 <div align="right">
 
-**<font color="red">ToDo add title</font>**
+**<font color="red">ToDo add description</font>**
 
 By [Teodor Neagoe](https://github.com/Teoneag)
 
 </div>
-
 <img src="gifs/{1} Preview.gif" alt="{1}"/>
 </div>
 
@@ -50,8 +49,6 @@ Or you can use IntelliJ IDEA to run it. (open the project and run the Main class
 
 ## Usage
 
-If you want to integrate the JVM-GDB-Wrapper in your project, you can use the following code to get started:
-
 **<font color="red">ToDo add usage code</font>**
 ```java
 
@@ -59,9 +56,10 @@ If you want to integrate the JVM-GDB-Wrapper in your project, you can use the fo
 
 ## Task
 
-
+- 
 
 ## Plan: 
+
 Chronological order. Planned time -> actual time
 
 ## ToDo

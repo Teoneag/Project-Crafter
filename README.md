@@ -9,12 +9,10 @@
 </pre>
 <div align="right">
 
-**<font color="red">ToDo add title</font>**
-
+Simple CLI tool to initialize a project with the basic structure.
 By [Teodor Neagoe](https://github.com/Teoneag)
 
 </div>
-
 <img src="gifs/init-project Preview.gif" alt="init-project"/>
 </div>
 
@@ -23,7 +21,9 @@ By [Teodor Neagoe](https://github.com/Teoneag)
 ### Prerequisites
 
 - Os: Windows
-
+- Gradle (for Java projects)
+- python (for python projects)
+  - libraries: pyfiglet
 
 ## Download
 
@@ -33,50 +33,31 @@ By [Teodor Neagoe](https://github.com/Teoneag)
 git clone https://github.com/Teoneag/init-project
 ```
 
-### 2. Build & run
+### 2. Add the path to the environment variables
 
-To build it run
+1. Type in the search bar env and click on "Edit the system environment variables".
+2. Click on "Environment Variables".
+3. On the "System variables" section, click on "Path" and then on "Edit".
+4. Click on "New" and add the path to the folder where you cloned the repository.
+
+### 3. Run
+   
 ```bash
-./gradlew build
+init-project <project-type> <project-name>
 ```
-
-And then to run it run
-```bash
-java -cp build/libs/init-project-1.0-SNAPSHOT.jar com.teoneag.Main
-```
-
-Or you can run it directly from gradle (but IO is a bit slower)
-
-```bash
-./gradlew run -q --console=plain
-```
-
-Or you can use IntelliJ IDEA to run it. (open the project and run the Main class)
-
-## Usage
-
-If you want to integrate the JVM-GDB-Wrapper in your project, you can use the following code to get started:
-
-**<font color="red">ToDo add usage code</font>**
-```java
-
-```
-
-## Task
-
-
+Options for project-type:
+- java-app
+- java-lib
+- python
 
 ## Plan: 
+
 Chronological order. Planned time -> actual time
-
-## ToDo
-
+- move the readme.md creation to main
 - make it create a new folder
 - make it create the gifs folder
 
-### refactor
-
-- move the readme.md creation to main
+## ToDo
 
 ### fix
 
@@ -84,4 +65,7 @@ Chronological order. Planned time -> actual time
 
 ### features
 
-- check a project for missing/wrong stuff
+- make some sort of cli (so you can change different features)
+- New tool: check a project for missing/wrong stuff and add them
+- add gradle that installs features (python, libraries, etc)
+- add help command
