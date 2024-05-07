@@ -60,6 +60,8 @@ Chronological order. Planned time -> actual time
 
 ## ToDo
 
+- find a better name for the project
+
 ### Fix
 
 - asci art spansw on 2 lines with empty line
@@ -67,6 +69,8 @@ Chronological order. Planned time -> actual time
 ### Features
 
 - make some sort of cli (so you can change different features)
-- New tool: check a project for missing/wrong stuff and add them
+- new tools
+  - check a project for missing/wrong stuff and add them
+  - rename project
 - add gradle that installs features (python, libraries, etc)
 - add help command
