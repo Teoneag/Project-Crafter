@@ -71,16 +71,17 @@ Chronological order. Planned time -> actual time
 
 ## ToDo
 
-- 
+- make it create a new folder
+- make it create the gifs folder
 
 ### refactor
 
-- 
+- move the readme.md creation to main
 
 ### fix
 
-- 
+- asci art spansw on 2 lines with empty line
 
 ### features
 
-- 
+- check a project for missing/wrong stuff

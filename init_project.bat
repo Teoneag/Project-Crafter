@@ -1,2 +1,2 @@
 @echo off
-python "%~dp0init_project.py" %*
+python "%~dp0src\init_project.py" %*
