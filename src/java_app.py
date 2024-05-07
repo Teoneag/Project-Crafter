@@ -1,4 +1,4 @@
-from init_java_project import init_java_project
+from utils.init_java_project import init_java_project
 
 if __name__ == "__main__":
     import sys

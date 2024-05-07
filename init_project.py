@@ -7,7 +7,7 @@ def init_project(project_type, project_name):
     script_dir = os.path.dirname(os.path.abspath(__file__))
     
     # Construct the path to the project type folder relative to the script's directory
-    file = os.path.join(script_dir, project_type.replace("-", "\\") + ".py")
+    file = os.path.join(script_dir, "src", project_type.replace("-", "_") + ".py")
     if not os.path.isfile(file):
         print(f"Project type folder '{project_type}' does not exist.")
         return
