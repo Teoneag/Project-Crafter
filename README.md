@@ -60,11 +60,11 @@ Chronological order. Planned time -> actual time
 
 ## ToDo
 
-### fix
+### Fix
 
 - asci art spansw on 2 lines with empty line
 
-### features
+### Features
 
 - make some sort of cli (so you can change different features)
 - New tool: check a project for missing/wrong stuff and add them

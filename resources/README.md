@@ -67,14 +67,14 @@ Chronological order. Planned time -> actual time
 
 - 
 
-### refactor
+### Refactor
 
 - 
 
-### fix
+### Fix
 
 - 
 
-### features
+### Features
 
 - 
