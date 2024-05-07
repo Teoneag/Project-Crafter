@@ -58,9 +58,10 @@ Or you can use IntelliJ IDEA to run it. (open the project and run the Main class
 
 - 
 
-## Plan: 
+## Plan -> Actual: 
 
 Chronological order. Planned time -> actual time
+- 
 
 ## ToDo
 

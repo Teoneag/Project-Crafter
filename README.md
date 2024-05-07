@@ -51,7 +51,7 @@ Options for project-type:
 - java-lib
 - python
 
-## Plan: 
+## Plan -> Actual: 
 
 Chronological order. Planned time -> actual time
 - move the readme.md creation to main
