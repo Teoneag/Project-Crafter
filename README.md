@@ -10,6 +10,7 @@
 <div align="right">
 
 Simple CLI tool to initialize a project with the basic structure.
+
 By [Teodor Neagoe](https://github.com/Teoneag)
 
 </div>
