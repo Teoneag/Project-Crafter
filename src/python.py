@@ -11,10 +11,11 @@ def init_python_script(project_name):
     
     # 2. Make the .gitignore file and add the test and __pycache__ folders
     with open(".gitignore", "w") as f:
-        f.write("test\n__pycache__\n")
+        f.write("__pycache__\ntest\n")
     
     # 3. Create the src folder + main.py
-    os.makedirs("src")
+    if not os.path.exists("src"):
+        os.makedirs("src")
     with open(os.path.join("src", "main.py"), "w") as f:
         f.write("print('Hail, Hydra...')\n")
     
