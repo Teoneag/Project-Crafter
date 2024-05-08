@@ -32,10 +32,10 @@ if __name__ == "__main__":
             sys.exit(1)
         analize()
     elif option == "rename":
-        if len(sys.argv) != 3:
+        if len(sys.argv) != 4:
             print("Incorrect args. Run: project rename <new-name>")
             sys.exit(1)
-        rename(sys.argv[2])
+        rename(sys.argv[2], sys.argv[3])
     else:
         print("Invalid command.")
         help()

@@ -65,6 +65,7 @@ Chronological order. Planned time -> actual time
 ### Fix
 
 - asci art spansw on 2 lines with empty line
+- rename ascii art in the rename function
 
 ### Features
 
@@ -72,7 +73,7 @@ Chronological order. Planned time -> actual time
   - help
   - init <type> <name>
   - analize
-  - rename <newName>
+  - rename <oldName> <newName>
 - add gradle that installs features (python, libraries, etc)
 - make help better
 

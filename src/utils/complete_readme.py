@@ -6,3 +6,4 @@ def complete_readme(readme_path, project_name):
         formatted_content = file.read().format(ascii_art_title, project_name)
         file.seek(0)
         file.write(formatted_content)
+        file.truncate()
