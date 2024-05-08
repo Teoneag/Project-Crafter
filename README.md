@@ -14,7 +14,7 @@ Simple CLI tool to initialize a project with the basic structure.
 By [Teodor Neagoe](https://github.com/Teoneag)
 
 </div>
-<img src="gifs/init-project Preview.gif" alt="init-project"/>
+<img src="gifs/Project-Crafter Preview.gif" alt="Project-Crafter"/>
 </div>
 
 ## Getting Started
@@ -31,7 +31,7 @@ By [Teodor Neagoe](https://github.com/Teoneag)
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/Teoneag/init-project
+git clone https://github.com/Teoneag/Project-Crafter
 ```
 
 ### 2. Add the path to the environment variables
@@ -42,38 +42,48 @@ git clone https://github.com/Teoneag/init-project
 4. Click on "New" and add the path to the folder where you cloned the repository.
 
 ### 3. Run
-   
 ```bash
-init-project <project-type> <project-name>
+proj <project-type> <project-name>
 ```
 Options for project-type:
 - java-app
 - java-lib
 - python
 
+If you don't like the "executable name" (proj), just rename the proj.bat to whatever you want.
 ## Plan -> Actual: 
 
 Chronological order. Planned time -> actual time
 - move the readme.md creation to main
 - make it create a new folder
 - make it create the gifs folder
-
-## ToDo
-
-- find a better name for the project: project
-
-### Fix
-
-- asci art spansw on 2 lines with empty line
-- rename ascii art in the rename function
-
-### Features
-
 - make some sort of cli (so you can change different features): 10m -> 11m
   - help
   - init <type> <name>
   - analize
   - rename <oldName> <newName>
+
+## ToDo
+
+- find a better name for the project: projectCrafter
+- call it from terminal with both projectCrafter and proj
+
+### Fix
+
+- asci art spansw on 2 lines with empty line
+- rename ascii art in the rename function
+- this random bug
+```bash
+D:\apps>project rename init-project Project-Crafter
+Found 'init-project' in 'D:\apps\Project-Crafter\.git\config' at line 182.
+Found 'init-project' in 'D:\apps\Project-Crafter\.git\FETCH_HEAD' at line 86.
+The renamed project contains 2 appearances of the old name 'init-project'.
+The system cannot find the path specified.
+
+D:\apps>cd Project-Crafter
+```
+### Features
+
 - add gradle that installs features (python, libraries, etc)
 - make help better
 
