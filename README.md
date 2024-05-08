@@ -60,7 +60,7 @@ Chronological order. Planned time -> actual time
 
 ## ToDo
 
-- find a better name for the project
+- find a better name for the project: project
 
 ### Fix
 
@@ -68,9 +68,18 @@ Chronological order. Planned time -> actual time
 
 ### Features
 
-- make some sort of cli (so you can change different features)
-- new tools
-  - check a project for missing/wrong stuff and add them
-  - rename project
+- make some sort of cli (so you can change different features): 10m -> 11m
+  - help
+  - init <type> <name>
+  - analize
+  - rename <newName>
 - add gradle that installs features (python, libraries, etc)
-- add help command
+- make help better
+
+### Tests
+
+- test the project
+
+### Refactor
+
+- make the code better and easily extandable (probably switch from python to java 😢)

@@ -1,3 +1,6 @@
+main_path = "src\\main.py"
+
+import sys
 import os
 
 def init_python_script(project_name):
@@ -6,15 +9,15 @@ def init_python_script(project_name):
         f.write("__pycache__\ntest\n")
     
     # 2. Create the src folder + main.py
-    if not os.path.exists("src"):
-        os.makedirs("src")
-    with open(os.path.join("src", "main.py"), "w") as f:
-        f.write("print('Hail, Hydra...')\n")
+    if not os.path.exists(os.path.dirname(main_path)):
+        os.makedirs(os.path.dirname(main_path))
+    if not os.path.exists(main_path):
+        with open(os.path.join("src", "main.py"), "w") as f:
+            f.write("print('Hail, Hydra...')\n")
     
     print(f"Python script '{project_name}' initialized successfully.")
 
 if __name__ == "__main__":
-    import sys
     if len(sys.argv) != 2:
         print("Incorrect args. Run: python app.py <project_name>")
     else:
