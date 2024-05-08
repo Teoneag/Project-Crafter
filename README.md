@@ -15,15 +15,20 @@
  ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝        ╚═╝   ╚══════╝╚═╝  ╚═╝
 </pre>
 <div align="right">
-
 Simple CLI tool to "craf" projects from templates: initialize, analyze, rename.
+
 For now it only supports Python, Java applications and Java libraries.
 
 By [Teodor Neagoe](https://github.com/Teoneag)
+</div>
+</div>
 
-</div>
-<img src="gifs/Project-Crafter Preview.gif" alt="Project-Crafter"/>
-</div>
+## Functions Preview
+
+| Init | Analyze | Rename |
+|------|---------|--------|
+| <img src="gifs/Project-Crafter Preview init.gif" alt="Project-Crafter init"/> | <img src="gifs/Project-Crafter Preview analyze.gif" alt="Project-Crafter analyze"/> | <img src="gifs/Project-Crafter Preview rename.gif" alt="Project-Crafter rename"/> |
+
 
 ## Getting Started
 
@@ -49,16 +54,32 @@ git clone https://github.com/Teoneag/Project-Crafter
 3. On the "System variables" section, click on "Path" and then on "Edit".
 4. Click on "New" and add the path to the folder where you cloned the repository.
 
-### 3. Run
+## 3. Ussage
+
+### Init
+
 ```bash
-proj <project-type> <project-name>
+proj init <project-type> <project-name>
 ```
 Options for project-type:
 - java-app
 - java-lib
 - python
 
+### Analyze
+
+```bash
+proj analyze
+```
+
+### Rename
+
+```bash
+proj rename <old-name> <new-name>
+```
+
 If you don't like the "executable name" (proj), just rename the proj.bat to whatever you want.
+
 ## Plan -> Actual: 
 
 Chronological order. Planned time -> actual time
@@ -74,6 +95,7 @@ Chronological order. Planned time -> actual time
 - rename ascii art in the rename function
 - find a better name for the project: projectCrafter
 - call it from terminal with both projectCrafter and proj
+- record new gif
 
 ## ToDo
 
@@ -95,8 +117,6 @@ D:\apps>cd Project-Crafter
 - make help better
 
 ### Tests
-
-- record new gif
 
 - test the project
 
