@@ -13,9 +13,7 @@ def init_python_script(project_name):
         os.makedirs(os.path.dirname(main_path))
     if not os.path.exists(main_path):
         with open(os.path.join("src", "main.py"), "w") as f:
-            f.write("print('Hail, Hydra...')\n")
-    
-    print(f"Python script '{project_name}' initialized successfully.")
+            f.write("print('Hail, Hydra...')\n")    
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:

@@ -4,7 +4,7 @@ import os
 import shutil
 from utils.complete_readme import complete_readme
 
-def init(project_type, project_name):
+def init(project_type, project_name, show_output=True):
     script_dir = os.path.dirname(os.path.abspath(__file__))
     
     file = os.path.join(script_dir, "types", project_type.replace("-", "_") + ".py")
@@ -35,3 +35,6 @@ def init(project_type, project_name):
     
     # 5. Execute the script with the project name as an argument
     subprocess.run([sys.executable, file, project_name])
+    
+    if show_output:
+        print(f"Project '{project_name}' initialized successfully.")

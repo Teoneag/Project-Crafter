@@ -22,7 +22,6 @@ def _get_project_type():
     return project_type
 
 def _init_helper_dir(project_type, helper_dir, project_name):
-    print("Initializing helper directory...")
     if os.path.exists(helper_dir):
         answer = input("The directory 'project_help' already exists. Do you want to overwrite it? (y/n)\n")
         if answer.lower() != 'y':
@@ -31,10 +30,12 @@ def _init_helper_dir(project_type, helper_dir, project_name):
         shutil.rmtree(helper_dir)
     os.makedirs(helper_dir)
     os.chdir(helper_dir)
-    init(project_type, project_name)
+    init(project_type, project_name, show_output=False)
     
 def sync_dirs(src, dst):
-    is_different = False
+    nr_changes = 0
+    nr_fixed_changes = 0
+    
     # Walk through the source directory
     for dirpath, dirnames, filenames in os.walk(src):
         # Calculate relative path to use in destination
@@ -43,12 +44,14 @@ def sync_dirs(src, dst):
 
         # Ensure corresponding directory exists in destination
         if not os.path.exists(dst_path):
-            is_different = True
+            nr_changes += 1
             answer = input(f"Do you want to add this missing dir? (y/n)\n{dst_path}\n")
             if answer.lower() != 'y':
                 print(f"Skipping {dst_path}...")
                 continue
+            nr_fixed_changes += 1
             os.makedirs(dst_path)
+            print(f"Directory {dst_path} added.")
 
         # Copy each file in the current directory to the destination directory
         
@@ -56,15 +59,16 @@ def sync_dirs(src, dst):
             src_file = os.path.join(dirpath, file)
             dst_file = os.path.join(dst_path, file)
             if not os.path.exists(dst_file):
-                is_different = True
+                nr_changes += 1
                 answer = input(f"Do you want to add this missing file? (y/n)\n{dst_file}\n")
                 if answer.lower() != 'y':
                     print(f"Skipping {dst_file}...")
                     continue
+                nr_fixed_changes += 1
                 shutil.copy2(src_file, dst_file)
+                print(f"File {dst_file} added.")
                 
-    if not is_different:
-        print("No missing files/dirs found.")
+    return nr_changes, nr_fixed_changes          
 
 def analize():
     current_dir = os.getcwd()
@@ -75,11 +79,13 @@ def analize():
     
     _init_helper_dir(project_type, helper_dir, project_name)
     
-    print("Comparing files...")
     project_helper_dir = os.path.join(helper_dir, project_name)
-    sync_dirs(project_helper_dir, current_dir)
+    nr_changes, nr_fixed_changes = sync_dirs(project_helper_dir, current_dir)
 
     os.chdir(current_dir)
     shutil.rmtree(helper_dir)
     
-    print("Project analized successfully.")
+    if nr_changes == 0:
+        print("No changes detected.")
+    else:
+        print(f"\nFixed {nr_fixed_changes} out of {nr_changes} changes.")
