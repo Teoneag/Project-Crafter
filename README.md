@@ -96,6 +96,8 @@ D:\apps>cd Project-Crafter
 
 ### Tests
 
+- record new gif
+
 - test the project
 
 ### Refactor

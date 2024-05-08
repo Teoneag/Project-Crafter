@@ -70,7 +70,7 @@ def sync_dirs(src, dst):
                 
     return nr_changes, nr_fixed_changes          
 
-def analize():
+def analyze():
     current_dir = os.getcwd()
     helper_dir = os.path.join(current_dir, "project_help")
     project_name = os.path.basename(current_dir)

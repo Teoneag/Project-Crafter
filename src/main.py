@@ -1,6 +1,6 @@
 import sys
 from init import init
-from analize import analize
+from analyze import analyze
 from rename import rename 
 
 def help():
@@ -26,11 +26,11 @@ if __name__ == "__main__":
             print("Incorrect args. Run: project init <project-type> <project-name>")
             sys.exit(1)
         init(sys.argv[2], sys.argv[3])
-    elif option == "analize":
+    elif option == "analyze":
         if len(sys.argv) != 2:
             print("Incorrect args. Run: project analize")
             sys.exit(1)
-        analize()
+        analyze()
     elif option == "rename":
         if len(sys.argv) != 4:
             print("Incorrect args. Run: project rename <new-name>")
