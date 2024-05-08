@@ -1,4 +1,6 @@
 import os
+import re
+from utils.complete_readme import ascii_art_title
 
 def search_files(directory, search_strings):
     nr_appereances = 0
@@ -36,7 +38,8 @@ def rename(old_name, new_name):
         with open(readme_file, 'r+', encoding='utf-8') as file:
             filedata = file.read()
             filedata = filedata.replace(old_name, new_name)
-            # ToDO: rename the ascii art as well
+            new_ascii_art = ascii_art_title(new_name)
+            filedata = re.sub(r"(?<=<pre>\n).*?(?=\n</pre>)", new_ascii_art, filedata, flags=re.DOTALL)
             file.seek(0)
             file.write(filedata)
             file.truncate()

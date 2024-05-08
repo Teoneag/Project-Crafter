@@ -13,7 +13,7 @@ def _get_project_type():
                 main_path = f.readline().replace('main_path = "', "").replace('"', "").replace("\\\\", "\\").strip()
                 path = os.path.join(os.getcwd(), main_path)
                 if os.path.exists(path):
-                    return file.replace('.py', '')
+                    return file.replace(".py", '')
     
     project_type = input("Project type not found. What's the type of the current project?\n")
     if not os.path.isfile(os.path.join(types_dir, project_type + ".py")):

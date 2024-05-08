@@ -1,15 +1,23 @@
 <div align="center">
 <pre>
-██╗███╗   ██╗██╗████████╗   ██████╗ ██████╗  ██████╗      ██╗███████╗ ██████╗████████╗
-██║████╗  ██║██║╚══██╔══╝   ██╔══██╗██╔══██╗██╔═══██╗     ██║██╔════╝██╔════╝╚══██╔══╝
-██║██╔██╗ ██║██║   ██║█████╗██████╔╝██████╔╝██║   ██║     ██║█████╗  ██║        ██║   
-██║██║╚██╗██║██║   ██║╚════╝██╔═══╝ ██╔══██╗██║   ██║██   ██║██╔══╝  ██║        ██║   
-██║██║ ╚████║██║   ██║      ██║     ██║  ██║╚██████╔╝╚█████╔╝███████╗╚██████╗   ██║   
-╚═╝╚═╝  ╚═══╝╚═╝   ╚═╝      ╚═╝     ╚═╝  ╚═╝ ╚═════╝  ╚════╝ ╚══════╝ ╚═════╝   ╚═╝   
+██████╗ ██████╗  ██████╗      ██╗███████╗ ██████╗████████╗
+██╔══██╗██╔══██╗██╔═══██╗     ██║██╔════╝██╔════╝╚══██╔══╝
+██████╔╝██████╔╝██║   ██║     ██║█████╗  ██║        ██║   
+██╔═══╝ ██╔══██╗██║   ██║██   ██║██╔══╝  ██║        ██║   
+██║     ██║  ██║╚██████╔╝╚█████╔╝███████╗╚██████╗   ██║   
+╚═╝     ╚═╝  ╚═╝ ╚═════╝  ╚════╝ ╚══════╝ ╚═════╝   ╚═╝   
+                                                          
+ ██████╗██████╗  █████╗ ███████╗████████╗███████╗██████╗ 
+██╔════╝██╔══██╗██╔══██╗██╔════╝╚══██╔══╝██╔════╝██╔══██╗
+██║     ██████╔╝███████║█████╗     ██║   █████╗  ██████╔╝
+██║     ██╔══██╗██╔══██║██╔══╝     ██║   ██╔══╝  ██╔══██╗
+╚██████╗██║  ██║██║  ██║██║        ██║   ███████╗██║  ██║
+ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝        ╚═╝   ╚══════╝╚═╝  ╚═╝
 </pre>
 <div align="right">
 
-Simple CLI tool to initialize a project with the basic structure.
+Simple CLI tool to "craf" projects from templates: initialize, analyze, rename.
+For now it only supports Python, Java applications and Java libraries.
 
 By [Teodor Neagoe](https://github.com/Teoneag)
 
@@ -23,7 +31,7 @@ By [Teodor Neagoe](https://github.com/Teoneag)
 
 - Os: Windows
 - Gradle (for Java projects)
-- python (for python projects)
+- Python (for Python projects)
   - libraries: pyfiglet
 
 ## Download
@@ -62,16 +70,15 @@ Chronological order. Planned time -> actual time
   - init <type> <name>
   - analize
   - rename <oldName> <newName>
-
-## ToDo
-
+- asci art spansw on 2 lines with empty line
+- rename ascii art in the rename function
 - find a better name for the project: projectCrafter
 - call it from terminal with both projectCrafter and proj
 
+## ToDo
+
 ### Fix
 
-- asci art spansw on 2 lines with empty line
-- rename ascii art in the rename function
 - this random bug
 ```bash
 D:\apps>project rename init-project Project-Crafter
