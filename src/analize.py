@@ -22,6 +22,7 @@ def _get_project_type():
     return project_type
 
 def _init_helper_dir(project_type, helper_dir, project_name):
+    print("Initializing helper directory...")
     if os.path.exists(helper_dir):
         answer = input("The directory 'project_help' already exists. Do you want to overwrite it? (y/n)\n")
         if answer.lower() != 'y':
@@ -31,6 +32,39 @@ def _init_helper_dir(project_type, helper_dir, project_name):
     os.makedirs(helper_dir)
     os.chdir(helper_dir)
     init(project_type, project_name)
+    
+def sync_dirs(src, dst):
+    is_different = False
+    # Walk through the source directory
+    for dirpath, dirnames, filenames in os.walk(src):
+        # Calculate relative path to use in destination
+        rel_path = os.path.relpath(dirpath, src)
+        dst_path = os.path.join(dst, rel_path)
+
+        # Ensure corresponding directory exists in destination
+        if not os.path.exists(dst_path):
+            is_different = True
+            answer = input(f"Do you want to add this missing dir? (y/n)\n{dst_path}\n")
+            if answer.lower() != 'y':
+                print(f"Skipping {dst_path}...")
+                continue
+            os.makedirs(dst_path)
+
+        # Copy each file in the current directory to the destination directory
+        
+        for file in filenames:
+            src_file = os.path.join(dirpath, file)
+            dst_file = os.path.join(dst_path, file)
+            if not os.path.exists(dst_file):
+                is_different = True
+                answer = input(f"Do you want to add this missing file? (y/n)\n{dst_file}\n")
+                if answer.lower() != 'y':
+                    print(f"Skipping {dst_file}...")
+                    continue
+                shutil.copy2(src_file, dst_file)
+                
+    if not is_different:
+        print("No missing files/dirs found.")
 
 def analize():
     current_dir = os.getcwd()
@@ -41,33 +75,11 @@ def analize():
     
     _init_helper_dir(project_type, helper_dir, project_name)
     
-    # compare files in the helper dir with the current project, and print the missing files
+    print("Comparing files...")
     project_helper_dir = os.path.join(helper_dir, project_name)
-    helper_files = set()
-    for root, dirs, files in os.walk(project_helper_dir):
-        for file in files:
-            rel_path = os.path.relpath(os.path.join(root, file), project_helper_dir)
-            helper_files.add(rel_path)
-    current_files = set()
-    for root, dirs, files in os.walk(current_dir):
-        for file in files:
-            rel_path = os.path.relpath(os.path.join(root, file), current_dir)
-            current_files.add(rel_path)
-    
-    missing_files = helper_files - set(current_files)
-    if missing_files == set():
-        print("No missing files.")
-    else:
-        print(f"Missing files: {missing_files}")       
-        answer = input("Do you want to add all those missing files? (y/n)\n")
-        if answer.lower() == 'y':
-            for file in missing_files:
-                dir = os.path.dirname(file)
-                if dir:
-                    os.makedirs(os.path.join(current_dir, dir), exist_ok=True)
-                shutil.copyfile(os.path.join(project_helper_dir, file), os.path.join(current_dir, file))
-            print("Files added successfully.")
+    sync_dirs(project_helper_dir, current_dir)
 
-    # remove the helper dir
     os.chdir(current_dir)
     shutil.rmtree(helper_dir)
+    
+    print("Project analized successfully.")

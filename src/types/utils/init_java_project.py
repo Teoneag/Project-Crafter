@@ -19,7 +19,7 @@ def init_java_project(project_name, project_type):
             
         # Step 4: Coppy checkstyle.xml
         current_dir = os.getcwd()
-        resources_dir = os.path.join(os.path.dirname(__file__), "..", "..", "resources")
+        resources_dir = os.path.join(os.path.dirname(__file__), "..", "..", "..", "resources")
         shutil.copyfile(os.path.join(resources_dir, "checkstyle.xml"), os.path.join(current_dir, "checkstyle.xml"))
         
         print(f"Java app '{project_name}' initialized successfully.")

@@ -4,11 +4,17 @@ from analize import analize
 from rename import rename 
 
 def help():
-    print("Commands: init, analize, analize-repair, rename")
+    print("""
+Available commands:
+    help
+    init
+    analize
+    rename
+""")
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Incorrect args. Running help...")
+        print("Invalid command.")
         help()
         sys.exit(1)
     
@@ -31,5 +37,6 @@ if __name__ == "__main__":
             sys.exit(1)
         rename(sys.argv[2])
     else:
-        print("Invalid command. Run: project help")
+        print("Invalid command.")
+        help()
         sys.exit(1)
