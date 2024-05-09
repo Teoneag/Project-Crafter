@@ -99,6 +99,8 @@ Chronological order. Planned time -> actual time
 
 ## ToDo
 
+- for Intellij, deselect analyze code from the settings for the git
+
 ### Fix
 
 - this random bug
