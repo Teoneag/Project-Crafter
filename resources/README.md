@@ -65,7 +65,7 @@ Chronological order. Planned time -> actual time
 
 ## ToDo
 
-- 
+- GitHub description
 
 ### Refactor
 
