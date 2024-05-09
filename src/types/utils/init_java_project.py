@@ -11,11 +11,11 @@ def init_java_project(project_name, project_type):
         if os.path.exists(".gitattributes"):
             os.remove(".gitattributes")
         
-        # Step 3: Modify .gitignore: add idea
+        # Step 3: Modify .gitignore: add .idea
         with open(".gitignore", "r+") as f:
-            if "idea" not in f.read():
+            if ".idea" not in f.read():
                 f.seek(0, os.SEEK_END)
-                f.write("\nidea")
+                f.write("\n.idea")
             
         # Step 4: Coppy checkstyle.xml
         current_dir = os.getcwd()
