@@ -17,7 +17,7 @@ def init_python_script(project_name):
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Incorrect args. Run: python app.py <project_name>")
+        print("Incorrect args. You need 1 arg: <project_name>")
     else:
         project_name = sys.argv[1]
         init_python_script(project_name)

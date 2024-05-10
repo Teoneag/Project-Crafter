@@ -8,7 +8,7 @@ def init(project_type, project_name, show_output=True):
     script_dir = os.path.dirname(os.path.abspath(__file__))
     
     file = os.path.join(script_dir, "types", project_type.replace("-", "_") + ".py")
-    if not os.path.isfile(file):
+    if not os.path.isfile(file) and project_type != "empty":
         print(f"Project type '{project_type}' does not exist.")
         return
     
@@ -34,7 +34,8 @@ def init(project_type, project_name, show_output=True):
     complete_readme(os.path.join(current_dir, "README.md"), project_name)
     
     # 5. Execute the script with the project name as an argument
-    subprocess.run([sys.executable, file, project_name])
+    if project_type != "empty":
+        subprocess.run([sys.executable, file, project_name])
     
     if show_output:
         print(f"Project '{project_name}' initialized successfully.")
