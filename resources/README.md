@@ -14,12 +14,9 @@ By [Teodor Neagoe](https://github.com/Teoneag)
 
 ## Getting Started
 
-### Prerequisites
+### 0. Prerequisites
 
 - Os: Windows
-
-
-## Download
 
 ### 1. Clone the repository
 
