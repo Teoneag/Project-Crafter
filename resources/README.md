@@ -26,30 +26,21 @@ git clone https://github.com/Teoneag/{1}
 
 ### 2. Build & run
 
-To build it run
+You can run it directly from gradle
+```bash
+./gradlew run
+```
+Or alternatively, first build it
 ```bash
 ./gradlew build
 ```
-
-And then to run it run
+And then run it
 ```bash
 java -cp build/libs/{1}-1.0-SNAPSHOT.jar com.teoneag.Main
 ```
-
-Or you can run it directly from gradle (but IO is a bit slower)
-
-```bash
-./gradlew run -q --console=plain
-```
-
 Or you can use IntelliJ IDEA to run it. (open the project and run the Main class)
 
-## Usage
-
-**<font color="red">ToDo add usage code</font>**
-```java
-
-```
+## Features
 
 ## Task
 
@@ -62,16 +53,8 @@ Chronological order. Planned time -> actual time
 
 ## ToDo
 
-- GitHub description
-
-### Refactor
-
-- 
-
-### Fix
-
-- 
-
-### Features
-
-- 
+- understand task + read resources, similar projects + make plan: 1h ->
+- project setup: 10m ->
+- test, fix & write tests 3h -> 
+- documentation: 30m ->
+  - GitHub description
