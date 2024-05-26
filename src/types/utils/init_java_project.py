@@ -21,5 +21,18 @@ def init_java_project(project_name, project_type):
         current_dir = os.getcwd()
         resources_dir = os.path.join(os.path.dirname(__file__), "..", "..", "..", "resources")
         shutil.copyfile(os.path.join(resources_dir, "checkstyle.xml"), os.path.join(current_dir, "checkstyle.xml"))
+        
+        # Step 5: add main manifest attribute in build.gradle.kts
+        with open("app\\build.gradle.kts", "r+") as f:
+            content = f.read()
+            f.seek(0, os.SEEK_END)
+            f.write("""
+
+tasks.withType<Jar> {
+    manifest {
+        attributes["Main-Class"] = "com.teoneag.App"
+    }
+}
+""")
     except Exception as e:
         print(f"Error: {e}")

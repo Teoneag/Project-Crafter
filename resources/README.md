@@ -36,9 +36,9 @@ Or alternatively, first build it
 ```
 And then run it
 ```bash
-java -cp build/libs/{1}-1.0-SNAPSHOT.jar com.teoneag.Main
+java -jar app/build/libs/app.jar
 ```
-Or you can use IntelliJ IDEA to run it. (open the project and run the Main class)
+Or you can use IntelliJ IDEA to run it. (open the project and run the App class)
 
 ## Features
 
