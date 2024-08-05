@@ -62,8 +62,10 @@ git clone https://github.com/Teoneag/Project-Crafter
 proj init <project-type> <project-name>
 ```
 Options for project-type:
+- flutter
 - java-app
 - java-lib
+- java-swing
 - python
 
 ### Analyze

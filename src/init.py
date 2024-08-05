@@ -17,8 +17,12 @@ def init(project_type, project_name, show_output=True):
         print(f"Directory '{project_name}' already exists.")
         return
     
-    os.makedirs(project_name)
-    os.chdir(project_name)
+    if project_type == "flutter":
+        os.system(f"flutter create {project_name}")
+        os.chdir(project_name)
+    else:
+        os.makedirs(project_name)
+        os.chdir(project_name)
     
     # 2. Create gifs folder
     if not os.path.exists("gifs"):
