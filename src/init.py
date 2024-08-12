@@ -18,7 +18,9 @@ def init(project_type, project_name, show_output=True):
         return
     
     if project_type == "flutter":
-        os.system(f"flutter create {project_name}")
+        # Print text in red
+        print("\033[31mI recommend u use VS Code Skeleton Project Generator\033[0m")
+        os.system(f"flutter create --org com.teoneag {project_name}")
         os.chdir(project_name)
     else:
         os.makedirs(project_name)
