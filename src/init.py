@@ -26,22 +26,29 @@ def init(project_type, project_name, show_output=True):
         os.makedirs(project_name)
         os.chdir(project_name)
     
-    # 2. Create gifs folder
+    # 2. Execute the script with the project name as an argument
+    if project_type != "empty":
+        subprocess.run([sys.executable, file, project_name])
+    
+    # 3. Create gifs folder
     if not os.path.exists("gifs"):
         os.makedirs("gifs")
     
-    # 3. Coppy readme, license
+    # 4. Coppy license
     current_dir = os.getcwd()
     resources_dir = os.path.join(os.path.dirname(__file__), "..", "resources")
-    shutil.copyfile(os.path.join(resources_dir, "README.md"), os.path.join(current_dir, "README.md"))
     shutil.copyfile(os.path.join(resources_dir, "LICENSE"), os.path.join(current_dir, "LICENSE"))
     
-     # 4. Modify the readme file
-    complete_readme(os.path.join(current_dir, "README.md"), project_name)
+    # 5. Copy the README.md file
+    readme_file = os.path.join(resources_dir, "README_" + project_type + ".md")
+    destination_readme = os.path.join(current_dir, "README.md")
+    if os.path.exists(readme_file):
+        shutil.copyfile(readme_file, destination_readme)
+    else:
+        shutil.copyfile(os.path.join(resources_dir, "README.md"), destination_readme)
     
-    # 5. Execute the script with the project name as an argument
-    if project_type != "empty":
-        subprocess.run([sys.executable, file, project_name])
+    # 6. Modify the readme file
+    complete_readme(os.path.join(current_dir, "README.md"), project_name)
     
     if show_output:
         print(f"Project '{project_name}' initialized successfully.")

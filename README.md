@@ -98,9 +98,15 @@ Chronological order. Planned time -> actual time
 - find a better name for the project: projectCrafter
 - call it from terminal with both projectCrafter and proj
 - record new gif
+- modify the java-lib README.md
+- fix java-lib project creation doesn't work: 10m -> 6:34 -> 7:48
 
 ## ToDo
 
+- add gradle that installs features (python, libraries, etc)
+  
+- make the readme be made out of the different sections, so it's easier to edit for each of them
+  - for example, for java add Java: 22 to the prerequisites
 - for Intellij, deselect analyze code from the settings for the git
 
 ### Fix
@@ -117,7 +123,6 @@ D:\apps>cd Project-Crafter
 ```
 ### Features
 
-- add gradle that installs features (python, libraries, etc)
 - make help better
 
 ### Tests
