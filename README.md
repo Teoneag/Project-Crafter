@@ -37,7 +37,7 @@ By [Teodor Neagoe](https://github.com/Teoneag)
 - Os: Windows
 - Gradle (for Java projects)
 - Python (for Python projects)
-  - libraries: pyfiglet
+  - it automatically installs pigfile library
 
 ## Download
 
@@ -100,10 +100,11 @@ Chronological order. Planned time -> actual time
 - record new gif
 - modify the java-lib README.md
 - fix java-lib project creation doesn't work: 10m -> 6:34 -> 7:48
+- automatically install pigfile library: 10m -> 13m
 
 ## ToDo
 
-- add gradle that installs features (python, libraries, etc)
+- automatically install gradle if it's not installed
   
 - make the readme be made out of the different sections, so it's easier to edit for each of them
   - for example, for java add Java: 22 to the prerequisites
