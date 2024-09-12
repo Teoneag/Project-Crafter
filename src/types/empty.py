@@ -1,4 +1,4 @@
-main_path = "lib\\main.dart"
+main_path = ""
 
 import sys
 

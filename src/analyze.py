@@ -11,11 +11,13 @@ def _get_project_type():
         if os.path.isfile(full_path):
             with open(full_path, "r") as f:
                 main_path = f.readline().replace('main_path = "', "").replace('"', "").replace("\\\\", "\\").strip()
+                if main_path == "":
+                    continue
                 path = os.path.join(os.getcwd(), main_path)
                 if os.path.exists(path):
                     return file.replace(".py", '')
     
-    project_type = input("Project type not found. What's the type of the current project?\n")
+    project_type = input("Project type not found. What's the type of the current project? It can be 'empty'\n")
     if not os.path.isfile(os.path.join(types_dir, project_type + ".py")):
         print("Project type not found. Type project help to see the available project types.")
         sys.exit(1)
