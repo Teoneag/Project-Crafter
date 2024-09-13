@@ -101,6 +101,7 @@ Chronological order. Planned time -> actual time
 - modify the java-lib README.md
 - fix java-lib project creation doesn't work: 10m -> 6:34 -> 7:48
 - automatically install pigfile library: 10m -> 13m
+- fix proj spaces for ascii art: 5m
 
 ## ToDo
 

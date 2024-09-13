@@ -11,7 +11,13 @@ def ascii_art_title(project_name):
     
     install_missing_packages()
     import pyfiglet
-    return pyfiglet.figlet_format(project_name, font = "ansi_shadow", width=110).rstrip()
+    
+    res = pyfiglet.figlet_format(project_name, font = "ansi_shadow", width=110).rstrip()
+    
+    # Remove empty lines (lines with only spaces are considered empty)
+    res = "\n".join([line for line in res.splitlines() if line.strip()])
+    
+    return res
 
 def complete_readme(readme_path, project_name):
     with open(readme_path, "r+", encoding="utf-8") as file:
